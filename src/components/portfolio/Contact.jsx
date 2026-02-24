@@ -116,7 +116,7 @@ export default function Contact() {
           className="mt-24 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4"
         >
           <span className="text-white/30 text-xs font-medium">
-            © 2025 James Douglas. All rights reserved.
+            © 2026 Daniele Biasetti. All rights reserved.
           </span>
           <span className="text-white/20 text-xs">
             Designed & built with intention.
