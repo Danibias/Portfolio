@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── Core palette ── */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    /* Brand green #0CEB01 */
+    --primary: 116 99% 46%;
+    --primary-foreground: 0 0% 0%;
+
+    /* Lime soft #EFFFA6 */
+    --lime: 69 100% 83%;
+    --lime-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 116 99% 46%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 116 99% 46%;
+
+    --radius: 0rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 116 99% 46%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 116 99% 46%;
+
+    /* Semantic tokens */
+    --surface-dark: 0 0% 0%;
+    --surface-lime: 69 100% 83%;
+
+    /* Typography scale */
+    --font-display: 'Space Grotesk', sans-serif;
+
+    /* Shadows */
+    --shadow-green: 0 0 40px -10px hsl(116 99% 46% / 0.5);
+    --shadow-strong: 0 20px 60px -15px hsl(0 0% 0% / 0.3);
+
+    /* Transitions */
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+}
+
+@layer utilities {
+  /* Green glow effect */
+  .glow-green {
+    box-shadow: var(--shadow-green);
+  }
+
+  /* Lime background surface */
+  .bg-lime-surface {
+    background-color: hsl(var(--lime));
+  }
+
+  /* Dark surface */
+  .bg-dark-surface {
+    background-color: hsl(var(--surface-dark));
+  }
+
+  /* Accent green text */
+  .text-accent-green {
+    color: hsl(var(--primary));
+  }
+
+  /* Underline reveal on hover */
+  .underline-reveal {
+    position: relative;
+    display: inline-block;
+  }
+
+  .underline-reveal::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: hsl(var(--primary));
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .underline-reveal:hover::after {
+    width: 100%;
+  }
+
+  /* Grid overlay */
+  .grid-overlay {
+    background-image:
+      linear-gradient(hsl(0 0% 100% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 100% / 0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  /* Tag chip */
+  .tag-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--muted-foreground));
+    transition: var(--transition-base);
+  }
+
+  .tag-chip:hover {
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+  }
+
+  /* Green tag */
+  .tag-green {
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+    background-color: hsl(var(--primary) / 0.08);
+  }
+
+  /* Number index */
+  .index-number {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: hsl(var(--primary));
+    text-transform: uppercase;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+}
