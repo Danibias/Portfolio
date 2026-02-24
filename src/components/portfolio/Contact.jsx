@@ -50,7 +50,7 @@ export default function Contact() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <a
-                href="mailto:hello@jamesdouglas.dev"
+                href="mailto:danielebiasetti1@gmail.com"
                 className="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold text-sm tracking-wide hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_40px_hsl(116_99%_46%/0.5)]"
               >
                 Send Me an Email
@@ -75,10 +75,10 @@ export default function Contact() {
           >
             <div className="flex flex-col gap-6 mb-12">
               {[
-                { label: "Email", value: "hello@jamesdouglas.dev", href: "mailto:hello@jamesdouglas.dev" },
-                { label: "LinkedIn", value: "/in/jamesdouglas", href: "#" },
-                { label: "GitHub", value: "github.com/jamesdouglas", href: "#" },
-                { label: "Based in", value: "London, UK · Available remotely", href: null },
+                { label: "Email", value: "danielebiasetti1@gmail.com", href: "mailto:danielebiasetti1@gmail.com" },
+                { label: "LinkedIn", value: "/in/daniele-biasetti", href: "https://www.linkedin.com/in/daniele-biasetti/" },
+                { label: "GitHub", value: "github.com/danibias", href: "https://github.com/Danibias" },
+                { label: "Based in", value: "Aberdeen, UK · Available remotely", href: null },
               ].map((item) => (
                 <div key={item.label} className="flex flex-col gap-1 border-b border-white/10 pb-6 last:border-0">
                   <span className="text-[10px] font-bold text-primary uppercase tracking-widest">
